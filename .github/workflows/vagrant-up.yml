@@ -20,6 +20,9 @@ jobs:
       - name: Show Vagrant version
         run: vagrant --version
 
+      - name: Init vagrant
+        run: vagrant init 
+
       - name: Run vagrant up
         run: vagrant up
 
