@@ -11,8 +11,8 @@ Vagrant.configure("2") do |config|
     config.vm.define 'archlinux'
 
     config.ssh.username = "arch"
-    config.ssh.insert_key = true
-    #config.ssh.password = "password"
+    config.ssh.password = "password"
+    config.ssh.insert_key = false
 
     # Prevent SharedFoldersEnableSymlinksCreate errors
     config.vm.synced_folder ".", "/vagrant", disabled: true

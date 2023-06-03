@@ -6,6 +6,7 @@ users:
 system_info:
    default_user:
      name: arch
+     password: password
      lock_passwd: true
      gecos: arch Cloud User
      groups: [wheel, adm]
