@@ -32,7 +32,7 @@ jobs:
         run: vagrant plugin update
 
       - name: Run vagrant up
-        run: vagrant up --debug
+        run: vagrant up #--debug
 
       - name: ssh into box after boot
         run: vagrant ssh -c "echo 'hello world!'"
