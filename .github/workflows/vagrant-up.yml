@@ -7,10 +7,10 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Cache Vagrant boxes
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.vagrant.d/boxes
           key: ${{ runner.os }}-vagrant-${{ hashFiles('Vagrantfile') }}
@@ -19,6 +19,12 @@ jobs:
 
       - name: Show Vagrant version
         run: vagrant --version
+      # Fix issue connection reset, retrying...
+      - name: Run vagrant plugin repair 
+        run: vagrant plugin repair
+
+      - name: Run vagrant plugin update
+        run: vagrant plugin update
 
       - name: Run vagrant up
         run: vagrant up
