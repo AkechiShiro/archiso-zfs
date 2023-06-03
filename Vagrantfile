@@ -4,7 +4,7 @@ Vagrant.configure("2") do |config|
     config.vm.define 'archlinux'
 
     config.ssh.insert_key = true
-    config.ssh.username = "arch"
+    config.ssh.username = "root"
     #config.ssh.password = "arch"
 
     # Prevent SharedFoldersEnableSymlinksCreate errors
