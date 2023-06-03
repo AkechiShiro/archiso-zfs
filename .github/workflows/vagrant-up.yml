@@ -23,7 +23,8 @@ jobs:
         #- name: Update Vagrant
         #  run: brew install hashicorp/tap/hashicorp-vagrant
         #  run: vagrant --version
-
+      - name: Activate Vagrant experimental features
+        run: export VAGRANT_EXPERIMENTAL="cloud_init,disks"
       # Fix issue connection reset, retrying...
       - name: Run vagrant plugin repair 
         run: vagrant plugin repair
