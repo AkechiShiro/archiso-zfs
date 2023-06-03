@@ -19,12 +19,22 @@ jobs:
 
       - name: Show Vagrant version
         run: vagrant --version
+        # Fix 3 for issue connection reset, retrying...
+      - name: Update Vagrant
+        run: brew install hashicorp/tap/hashicorp-vagrant
+
+      - name: Show upgraded Vagrant version
+        run: vagrant --version
+
       # Fix issue connection reset, retrying...
       - name: Run vagrant plugin repair 
         run: vagrant plugin repair
 
       - name: Run vagrant plugin update
         run: vagrant plugin update
+      # Fix 2 for issue connection reset, retrying...
+      - name: Run vagrant reload --provision
+        run: vagrant reload --provision
 
       - name: Run vagrant up
         run: vagrant up
